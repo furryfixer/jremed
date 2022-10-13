@@ -1,9 +1,0 @@
-[Desktop Entry]
-Exec=gksudo jremed
-Icon=/opt/jremed/lxmed.png
-Type=Application
-Terminal=false
-Name=JRE Menu Editor
-GenericName=Main Menu Editor
-StartupNotify=false
-Categories=Settings;
