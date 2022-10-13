@@ -1,5 +1,5 @@
 # jremed
-## A System Menu Editor that is light-weight, based on Java
+## A System Menu Editor for Linux that is light-weight, based on Java
 
 JREMED (JRE Menu Editor) is derived from LXMED, with a few changes to make it more up-to-date and generic. It is therefore subject to the lxmed GPL3 license.
 
