@@ -28,13 +28,13 @@ rm -v /usr/bin/jremed
 
 # copy new files
 mkdir -v /opt/jremed
-cp -v content/jremed /usr/bin
+cp -v content/jremed /usr/bin/
 chmod -v +x /usr/bin/jremed
-cp -v content/JREmenuEditor.jar /opt/jremed
-cp -v content/uninstall.sh /opt/jremed
+cp -v content/JREmenuEditor.jar /opt/jremed/
+cp -v content/uninstall.sh /opt/jremed/
 chmod -v +x /opt/jremed/uninstall.sh
-cp -v content/lxmed.png /opt/jremed
-cp -v content/jremed.desktop /usr/share/applications
+cp -v content/lxmed.png /opt/jremed/
+cp -v content/jremed.desktop /usr/share/applications/
 echo
 echo "Installation sucessfully completed. Enter jremed to run application or check Preferences -> JRE Menu Editor in your main menu"
 echo
