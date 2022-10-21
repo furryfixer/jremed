@@ -32,7 +32,7 @@ How to uninstall jremed?
 
 ## Notes:
 
-The menu entry (JRE Menu Editor) executes "gksudo jremed" to get elevated privileges. This requires the deprecated "gksudo" or an alias/replacement for it. The author has an appropriate gksudo replacement that leverages pkexec in both Wayland and X11, as seen here:
+The menu entry (JRE Menu Editor) executes "gksudo jremed" to get elevated privileges. This requires the deprecated "gksudo" or an alias/replacement for it. The author has an appropriate gksudo replacement for both Wayland and X11, as seen here:
 
 https://github.com/furryfixer/gksudo2
 
