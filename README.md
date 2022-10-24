@@ -19,7 +19,7 @@ Make sure you have a **Java Runtime Environment** installed, and a **gksudo** or
 
 - Clone or download the "**jremed**" folder.
 - Move the folder to any desired location on the local system.
-- cd  /_your_location_/jremed
+- cd  /_your_location_/jremed  # or /_your_location_/jremed-main
 - chmod +x install.sh
 - sudo ./install.sh
 - Go to main menu -> Preferences -> JRE Menu Editor
