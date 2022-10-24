@@ -25,6 +25,7 @@ echo Removing any previous installed files and folders...
 rm -r -v -f /opt/jremed
 rm -v /usr/share/applications/jremed.desktop
 rm -v /usr/bin/jremed
+rm -v /usr/share/polkit-1/actions/org.pkexec.jremed.policy
 
 # copy new files
 mkdir -v /opt/jremed
@@ -35,6 +36,7 @@ cp -v content/uninstall.sh /opt/jremed/
 chmod -v +x /opt/jremed/uninstall.sh
 cp -v content/lxmed.png /opt/jremed/
 cp -v content/jremed.desktop /usr/share/applications/
+cp -v org.pkexec.jremed.policy /usr/share/polkit-1/actions/
 echo
 echo "Installation sucessfully completed. Enter jremed to run application or check Preferences -> JRE Menu Editor in your main menu"
 echo
