@@ -3,7 +3,9 @@
 
 JREMED (JRE Menu Editor) is derived from LXMED, with a few changes to make it more up-to-date and generic. It is therefore subject to the lxmed GPL3 license.
 
-JREMED is an Application Menu Editor suitable for most modern linux desktops whose menus follow the XDG menu specification.  It is Java-based, and requires **gtk 2.2+ or 3.0+ and a Java runtime environment**, but has lighter dependencies than many other menu editors.  To make changes, it also **requires root access through gksudo**, or a replacement for that deprecated program.  The author, in a separate repository, provides a gksudo replacement, **gksudo2** that works for both Wayland and X11 desktops. See notes below.
+JREMED is an Application Menu Editor suitable for most modern linux desktops whose menus follow the XDG menu specification.  It is Java-based, and requires **gtk 2.2+ or 3.0+ and a Java runtime environment**, but has lighter dependencies than many other menu editors.  To make changes, it also **requires root access through gksudo**, or a replacement for that deprecated program.  The author, in a separate repository, provides a gksudo replacement, **gksudo2** that works for both Wayland and X11 desktops. See notes below. An alternative version that relies on pkexec instead of gksudo can be found here:
+
+https://github.com/furryfixer/jremed-pk
 
 ## Dependencies
 
