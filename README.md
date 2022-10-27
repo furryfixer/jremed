@@ -7,7 +7,7 @@ JREMED is an Application Menu Editor suitable for most modern linux desktops who
 
 ## Dependencies
 
-Polkit, GTK2.2+ or GTK3, JRE (Java Runtime Environment).
+Polkit (and polkit agent), GTK2.2+ or GTK3, JRE (Java Runtime Environment).
 
 ## Applicability
 
