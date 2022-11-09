@@ -4,9 +4,8 @@
 SILENT_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
 if [ "$EUID" -ne 0 ]; then
-	echo "Running jremed without elevated privileges.
-	Most menu editing is prevented. Run with \"pkexec /usr/bin/jremed\" or \"gksudo jremed\" to gain full function."
-	notify-send "Running jremed without elevated privileges. Most menu editing is prevented. Run with \"pkexec /usr/bin/jremed\" or \"gksudo jremed\" to gain full function."
+	echo "Running jremed without elevated privileges. Most menu editing is prevented. Run with \"pkexec /usr/bin/jremed\" or \"gksudo jremed\" to gain full function."
+	notify-send Warning "Running jremed without elevated privileges. Most menu editing is prevented. Run with \"pkexec /usr/bin/jremed\" or \"gksudo jremed\" to gain full function."
 fi
 #gksudo 'java $SILENT_JAVA_OPTIONS -jar /opt/jremed/JREmenuEditor.jar'
 java $SILENT_JAVA_OPTIONS -jar /opt/jremed/JREmenuEditor.jar
