@@ -17,7 +17,7 @@ Why JREMED?  Since it works at the system level, this program is not for everyon
 
 Make sure you have a **Java Runtime Environment** installed, as well as polkit, then follow these steps:
 
-- Clone or download the "**jremed**" folder.
+- Clone or download the "**jremed**" repo. ("src" folder not needed)
 - Move the folder to any desired location on the local system.
 - cd  /_your_location_/jremed
 - chmod +x install.sh
