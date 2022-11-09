@@ -17,7 +17,7 @@ Why JREMED?  Since it works at the system level, this program is not for everyon
 
 Make sure you have a **Java Runtime Environment** installed, and a **gksudo** or **gksudo2** equivalent, then follow these steps:
 
-- Clone or download the "**jremed**" repo. ("src" folder not needed)
+- Clone or download the "**jremed**" repo.
 - Move the folder to any desired location on the local system.
 - cd  /_your_location_/jremed
 - chmod +x install.sh
