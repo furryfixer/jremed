@@ -36,7 +36,7 @@ cp -v content/uninstall.sh /opt/jremed/
 chmod -v +x /opt/jremed/uninstall.sh
 cp -v content/lxmed.png /opt/jremed/
 cp -v content/jremed.desktop /usr/share/applications/
-cp -v org.pkexec.jremed.policy /usr/share/polkit-1/actions/
+cp -v content/org.pkexec.jremed.policy /usr/share/polkit-1/actions/
 echo
 echo "Installation sucessfully completed. Enter jremed to run application or check Preferences -> JRE Menu Editor in your main menu"
 echo
