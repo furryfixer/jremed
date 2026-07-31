@@ -5,16 +5,17 @@ JREMED (JRE Menu Editor) is derived from LXMED, with a few changes to make it mo
 
 JREMED is an Application Menu Editor suitable for most modern linux desktops whose menus follow the XDG menu specification.  It is Java-based, and requires **gtk 3.0+ and a Java runtime environment**, but has lighter dependencies than some other menu editors. Previously incompatible with Xwayland, but now works on both **X11 and Wayland** (with Xwayland). To make changes, it **requires root access through polkit/pkexec**. It has been tested and working on X11 systems, including Gnome, Plasma, LXQt, Mate, XFCE, i3, and working on Wayland with Wayfire, Sway, Niri, Labwc, LXQT-wayland. Until better Java support arrives for Wayland, Xwayland is needed.
 
-## Dependencies
-
-For all: **Bash, Polkit**, and a **polkit agent**, **GTK2.2+** or **GTK3, JRE** (Java Runtime Environment)<br/> 
-For Wayland: **Xwayland** and **xhost**. xhost may be in an "x11-xserver-utils" or "xorg-xhost" package, depending on distribution.
-
-The polkit agent of your choice must be running to use jremed from the menu, although it may still run from a terminal window command line without it. Xwayland must be installed and available (that is the default for most Wayland desktops)
-
 ## Applicability
 
 Why JREMED?  Since it works at the system level, this program is not for everyone.  It is mostly for those who want or need to change global menus or **_application_.desktop** files system-wide for all users, or for those single users who prefer the simpler option of working with only one high level set of menus, instead of the admittedly safer and more secure option of having multiple menu configs, and storing menu modifications in the user's home directory. The user will need **sudo or superuser privileges** to edit menus with this app. Like lxmed, jremed works on the global application menu entries in **/usr/share/applications**, not at the level of the local user.
+
+
+## Dependencies
+
+For all:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Bash, Polkit**, and a **polkit agent**, **GTK2.2+** or **GTK3, JRE** (Java Runtime Environment)<br/> 
+For Wayland:&nbsp;&nbsp;**Xwayland** and **xhost**. xhost may be in an "x11-xserver-utils" or "xorg-xhost" package, depending on distribution.
+
+The polkit agent of your choice must be running to use jremed from the menu, although it may still run from a terminal window command line without it. Xwayland must be installed and available (that is the default for most Wayland desktops)
 
 ## Installation
 
