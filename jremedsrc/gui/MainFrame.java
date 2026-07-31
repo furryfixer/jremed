@@ -105,7 +105,7 @@ public class MainFrame extends javax.swing.JFrame implements Observer {
      * Creates new form MainFrame.
      */
     private MainFrame() {
-        setPreferredSize(new Dimension(640, 450));
+        setPreferredSize(new Dimension(640, 580));
         for (Category categorie : Model.getModel().getCategories()) {
             dlmCategories.addElement(categorie);
         }
