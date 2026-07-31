@@ -1,11 +1,85 @@
 #!/bin/bash
-# JREMED, modified LXMED, by William Rueger (furryfixer)
-
-SILENT_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
-
-if [ "$EUID" -ne 0 ]; then
-	echo "Running jremed without elevated privileges. Most menu editing is prevented. Run with \"pkexec /usr/bin/jremed\" or \"gksudo jremed\" to gain full function."
-	notify-send Warning "Running jremed without elevated privileges. Most menu editing is prevented. Run with \"pkexec /usr/bin/jremed\" or \"gksudo jremed\" to gain full function."
+# JREMED for root, modified LXMED, by William Rueger (furryfixer)
+# See tail of script for usage options
+err_exit () {
+	timestamp=`date +%D" "%H:%M:%S` 
+	[[ -w /var/log/jremed.log ]] && echo "$timestamp  $1" >> /var/log/jremed.log
+	notify-send Warning "$1"
+	echo "
+$1
+"
+	exit 1 
+}
+check_depends () {
+        if ! command -v $1 &>/dev/null; then
+                [[ -n $2 ]] &&  depnd=$2 || depnd=$1
+                err_exit "STOP! \"${depnd}\" is not found, and required by jremed"
+        fi
+}
+if [[ $EUID -eq 0 ]]; then
+	err_exit "
+STOP! Do no run jremed as root. As non-root user, run
+\"jremed -r\"   or   \"jremed --root\"
+for elevated privileges.
+"
 fi
-#gksudo 'java $SILENT_JAVA_OPTIONS -jar /opt/jremed/JREmenuEditor.jar'
-java $SILENT_JAVA_OPTIONS -jar /opt/jremed/JREmenuEditor.jar
+check_depends java "Java runtime (JRE)"
+[[ $XDG_SESSION_TYPE = "wayland" ]] && check_depends Xwayland
+
+if [[ $1 = "-r" ]] || [[ $1 = "--root" ]]; then
+	check_depends pkcheck "Polkit"
+	if ! grep -Eq -- "-polkit|-policykit|polkit-|gnome-shell" <<<$(ps -e); then
+		check_depends "noexec" "A polkit agent"
+	fi
+	if [[ $XDG_SESSION_TYPE = "x11" ]]; then
+		if ! pkexec jremed-bin; then
+			err_exit "jremed failed for some reason"
+		fi
+	else # Wayland
+		check_depends xhost
+		if sudo xhost 2>/dev/null | grep -q 'root' ; then
+			if ! pkexec jremed-bin ; then
+				err_exit "jremed failed. Not authorized or Xwayland fail?"
+			fi
+		elif ! xhost SI:localuser:root &>/dev/null; then
+			err_exit "jremed failed. Not authorized or xhost fail?"
+		else # xhost root succeeded
+			if ! pkexec jremed-bin ; then
+				xhost -SI:localuser:root &>/dev/null
+				err_exit "jremed failed. Not authorized or Xwayland fail?"
+			fi
+			xhost -SI:localuser:root &>/dev/null		 
+		fi
+	fi
+
+elif [[ -z $1 ]]; then # no option given, run without pkexec
+
+	echo "
+Running jremed without elevated privileges. Most menu editing is prevented. Run \"jremed -r\" or \"jremed --root\" to gain full function.
+"
+	notify-send Warning "Running jremed without elevated privileges. Most menu editing is prevented. Run
+\"jremed -r\" or
+\"jremed --root\"
+to gain full function."
+	jremed-bin
+
+else  # Any given option not -r or --root, do help
+ 	echo "
+JREMED System Menu Editor 
+   See /opt/jremed/README.md for full info
+Usage:
+   jremed [OPTION]
+
+Options:
+   {none}      Run jremed without elevated privileges. Best
+               for detailed examination of menu items or 
+               .desktop files where no editing required.   
+
+   -h, --help, {Unknown}      This information
+      
+   -r, --root  Use pkexec to elevate privileges. Used to 
+               edit, change, reorganize or add menu items
+               to the System menu.
+"
+fi
+exit
