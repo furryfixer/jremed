@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=pkexec /usr/bin/jremed
+Exec=jremed -r
 Icon=/opt/jremed/lxmed.png
 Type=Application
 Terminal=false
