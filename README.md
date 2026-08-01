@@ -3,7 +3,7 @@
 
 JREMED (JRE Menu Editor) is derived from LXMED, with a few changes to make it more up-to-date and generic. It is therefore subject to the lxmed GPL3 license.
 
-JREMED is an Application Menu Editor suitable for most modern linux desktops whose menus follow the XDG menu specification.  It is Java-based, and requires **gtk 3.0+ and a Java runtime environment**, but has lighter dependencies than some other menu editors. Previously incompatible with Xwayland, but now works on both **X11 and Wayland** (with Xwayland). To make changes, it **requires root access through polkit/pkexec**. It has been tested and working on X11 systems, including Gnome, Plasma, LXQt, Mate, XFCE, i3, and working on Wayland with Wayfire, Sway, Niri, Labwc, LXQT-wayland. Until better Java support arrives for Wayland, Xwayland is needed.
+JREMED is an Application Menu Editor suitable for most modern linux desktops whose menus follow the XDG menu specification.  It is Java-based, and requires **gtk 3.0+ and a Java runtime environment**, but has lighter dependencies than some other menu editors. Previously incompatible with Xwayland, but now works on both **X11 and Wayland** (with Xwayland). To make changes, it **requires root access through polkit/pkexec**. It has been tested and working on X11 systems, including **Gnome, Plasma, LXQt, Mate, XFCE, i3**, and working on Wayland with **Wayfire, Sway, Niri, Labwc, LXQt-wayland**. Until better Java support arrives for Wayland, Xwayland is needed.
 
 ## Applicability
 
@@ -26,7 +26,6 @@ Make sure you have a **Java Runtime Environment** installed, as well as polkit, 
 - cd  /_your_location_/jremed
 - chmod +x install.sh
 - sudo ./install.sh
-- Go to main menu -> Preferences -> JRE Menu Editor
 
 How to uninstall jremed?
 
@@ -35,11 +34,13 @@ How to uninstall jremed?
 
 ## How to Use
 
-Select from any standard desktop menu, or<br>  
-From a terminal window:
+From the menu:
 
+- Main Menu -> Preferences -> JRE Menu Editor
+  
+From a terminal window:
 - jremed&nbsp;&nbsp;# runs with normal user privileges
-- jremed -r (or jremed --root)&nbsp;&nbsp;# Uses pkexec to elevate priileges
+- jremed -r (or jremed --root)&nbsp;&nbsp;# Uses pkexec to elevate privileges
 - jremed --help&nbsp;&nbsp;# This basic info
 
 ## Notes:
