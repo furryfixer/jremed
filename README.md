@@ -15,7 +15,7 @@ Why JREMED?  Since it works at the system level, this program is not for everyon
 For all:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Bash, Polkit**, and a **polkit agent**, **GTK2.2+** or **GTK3, JRE** (Java Runtime Environment)<br/> 
 For Wayland:&nbsp;&nbsp;**Xwayland** and **xhost**. xhost may be in an "x11-xserver-utils" or "xorg-xhost" package, depending on distribution.
 
-The polkit agent of your choice must be running to use jremed from the menu, although it may still run from a terminal window command line without it. Xwayland must be installed and available (that is the default for most Wayland desktops)
+The polkit agent of your choice must be running to use jremed from the menu, although it may still run from a terminal window command line without it. Xwayland must be installed and available (that is the default for most Wayland desktops). Niri also requires xwayland-satellite.
 
 ## Installation
 
